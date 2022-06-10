@@ -26,7 +26,7 @@ namespace PessoaCadastro.Controllers
         public  IActionResult Cadastro(PessoaModel pessoa)
         {
             _pessoaRepositorio.CadastrarPessoa(pessoa);
-            return View(pessoa);
+            return View("Index");
         }
     }
 }
