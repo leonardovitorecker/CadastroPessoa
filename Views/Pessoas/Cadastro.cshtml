@@ -1,0 +1,82 @@
+﻿@model PessoaCadastro.Models.PessoaModel
+
+@{
+  ViewData["Title"] = "Cadastro";
+}
+
+
+
+<form asp-action="Cadastro" >
+        <div class="row justify-content-center" style="color:darkred">
+            <div class="col-5">
+                <div class="card" style="border-color:darkolivegreen">
+            <div class="card-header text-center">
+                <h2>Cadastro de Pessoa</h2>
+            </div>
+            <div class="card-body" style="border-color:darkgoldenrod">
+                <div class="form-group mb-3">
+                <input type="text" asp-for="nomecompleto"class="form-control" placeholder="Digite o seu nome" />
+                   <span asp-validation-for="nomecompleto" class="text-danger"></span>
+            </div>
+            <div class="form-body mb-3" style="border-color:darkgoldenrod">
+                <input type="text" asp-for="email" class="form-control" placeholder="Digite o seu email" />
+                   <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-body mb-3" style="border-color:darkgoldenrod">
+                 <input asp-for="datanascimento" class="form-control"placeholder="digite a data de nascimento"/>
+                <span asp-validation-for="datanascimento" class="text-danger"></span>
+              
+            </div>
+              <div class="form-body mb-3" style="border-color:darkgoldenrod">
+                <select type="text"  class="form-control" asp-for="sexo">
+                     <option value="0">selecione o sexo</option>
+                     <option value="M">Masculino</option>
+                     <option value="F">Feminino</option>
+                </select>
+            </div>
+               <div class="form-body mb-3" style="border-color:darkgoldenrod">
+               <select type="text"  class="form-control" asp-for="estado">
+                     <option value="0">selecione o seu estado</option>
+                     <option value="PR">Paraná</option>
+                     <option value="SC">Santa Catarina</option>
+                     <option value="RS">Rio Grande do Sul</option>
+                     <option value="SP">São Paulo</option>
+                     <option value="RJ">Rio de janeiro</option>
+                </select>
+            </div>
+              <div class="form-body mb-3" style="border-color:darkgoldenrod">
+                <input type="text" asp-for="cidade" class="form-control" placeholder="Digite a sua cidade" />
+                 <span asp-validation-for="cidade" class="text-danger"></span>
+            </div>
+            <div class="form-body mb-3">
+                <input type="text" asp-for="cep" class="form-control" placeholder="Digite o seu cep" />
+                 <span asp-validation-for="cep" class="text-danger"></span>
+            </div>
+            <div class="form-body mb-3" style="border-color:darkgoldenrod">
+                <input type="text" asp-for="rua" class="form-control" placeholder="Digite a sua rua" />
+                 <span asp-validation-for="rua" class="text-danger"></span>
+            </div>
+            <div class="form-body mb-3" style="border-color:darkgoldenrod">
+                <input type="numero" asp-for="numero" class="form-control" placeholder="Digite o seu numero da casa" />
+                 <span asp-validation-for="numero" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3" style="border-color:darkgoldenrod">
+                 <div class="form-body">
+                <input type="combobox" asp-for="observacoes" class="form-control" placeholder="Deixe uma observação"/>
+                 <span asp-validation-for="observacoes" class="text-danger"></span>
+             </div>
+            </div>
+            <div class="card-footer">
+                <input type="submit" value="Cadastrar" class="btn btn-primary"/>
+              </div>
+           </div>
+        </div>
+       </div>
+    </div>
+  </form>
+ 
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
